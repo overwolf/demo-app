@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+	<head> 
+		<link rel="stylesheet" href="style.css" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>Sub window</title>
+		<script>
+			function dragMove(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.dragMove(result.window.id);
+					}
+				});
+			};
+			
+			function closeWindow(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.close(result.window.id);
+					}
+				});
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="content" onmousedown="dragMove();">
+			<h1>Hello again!</h1>
+			<p>This is the sub window. You can drag from anywhere you want, but you can't resize it.</p>
+			<button id="close" onclick="closeWindow();">Close</button>
+		</div>
+	</body>
+</html>

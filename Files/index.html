@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+	<head> 
+		<link rel="stylesheet" href="style.css" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>Demo app</title>
+		<script>
+			function dragResize(edge){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.dragResize(result.window.id, edge);
+					}
+				});
+			};
+			
+			function dragMove(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.dragMove(result.window.id);
+					}
+				});
+			};
+			
+			function closeWindow(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.close(result.window.id);
+					}
+				});
+			};
+			
+			function openSubWindow(){
+				alert("the subwindow will only be visible inside a game");
+				overwolf.windows.obtainDeclaredWindow("SubWindow", function(result){
+					if (result.status == "success"){
+						overwolf.windows.restore(result.window.id, function(result){
+								console.log(result);
+						});
+					}
+				});
+			};
+			
+			function takeScreenshot(){
+				overwolf.media.takeScreenshot(function(result){
+					if (result.status == "success"){
+						var img = document.getElementById("screenshot");
+						img.src = result.url;
+						img.onload = function() {
+							overwolf.media.shareImage(img, "Screen Shot");
+						};
+					}
+				});
+			}
+			
+			function runTeamSpeak(){
+				overwolf.extensions.launch("lafgmhfbkjljkgoggomibmhlpijaofafbdhpjgif");
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="resizeGrip" id="resizeGripTopLeft" onmousedown="dragResize('TopLeft');"></div>
+		<div class="resizeGrip" id="resizeGripTop" onmousedown="dragResize('Top');"></div>
+		<div class="resizeGrip" id="resizeGripTopRight" onmousedown="dragResize('TopRight');"></div>
+		<div class="resizeGrip" id="resizeGripRight" onmousedown="dragResize('Right');"></div>
+		<div class="resizeGrip" id="resizeGripBottomRight" onmousedown="dragResize('BottomRight');"></div>
+		<div class="resizeGrip" id="resizeGripBottom" onmousedown="dragResize('Bottom');"></div>
+		<div class="resizeGrip" id="resizeGripBottomLeft" onmousedown="dragResize('BottomLeft');"></div>
+		<div class="resizeGrip" id="resizeGripLeft" onmousedown="dragResize('Left');"></div>
+		<div id="content" onmousedown="dragMove();">
+			<h1>Hello, world!</h1>
+			<p>You can drag from anywhere you want, and resize from the edges.</p>
+			<button id="close" onclick="closeWindow();">Close</button>
+			<button id="run-teamspeak" onclick="runTeamSpeak();">Run TeamSpeak</button>
+			<button onclick="takeScreenshot();">Take Screenshot</button>
+			<button id="open-subwindow" onclick="openSubWindow();">Open Sub-Window</button>
+			<img id="screenshot" width="300px"></img>
+		</div>
+	</body>
+</html>
