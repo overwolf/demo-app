@@ -1,9 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head> 
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 		<title>Demo app</title>
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet"> 
+
 		<script>
 			function dragResize(edge){
 				overwolf.windows.getCurrentWindow(function(result){
@@ -28,6 +30,38 @@
 					}
 				});
 			};
+
+			function minimize(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.minimize(result.window.id);
+					}
+				});
+			};
+
+			function toggleMaximize(){
+				let element = document.querySelector('.maximize-restore-selector');
+				let root =  document.getElementsByTagName( 'html' )[0];
+
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status !== "success") {
+						return;
+					}
+						
+					if (element.checked) {
+						overwolf.windows.restore(result.window.id);
+						root.classList.remove('maximized');
+					} else {
+						overwolf.windows.maximize(result.window.id);
+						root.classList.add('maximized');
+					}
+
+				});
+			};
+
+			function showSupport() {
+                window.location.href = "overwolf://settings/support";
+            };
 			
 			function openSubWindow(){
 				alert("the subwindow will only be visible inside a game");
@@ -53,28 +87,90 @@
 			}
 			
 			function runTeamSpeak(){
-				overwolf.extensions.launch("lafgmhfbkjljkgoggomibmhlpijaofafbdhpjgif");
+				overwolf.extensions.launch("lmkhofgknaclgcdplfkgcahdkdmomimaoklioonf");
 			};
 		</script>
 	</head>
 
 	<body>
-		<div class="resizeGrip" id="resizeGripTopLeft" onmousedown="dragResize('TopLeft');"></div>
-		<div class="resizeGrip" id="resizeGripTop" onmousedown="dragResize('Top');"></div>
-		<div class="resizeGrip" id="resizeGripTopRight" onmousedown="dragResize('TopRight');"></div>
-		<div class="resizeGrip" id="resizeGripRight" onmousedown="dragResize('Right');"></div>
-		<div class="resizeGrip" id="resizeGripBottomRight" onmousedown="dragResize('BottomRight');"></div>
-		<div class="resizeGrip" id="resizeGripBottom" onmousedown="dragResize('Bottom');"></div>
-		<div class="resizeGrip" id="resizeGripBottomLeft" onmousedown="dragResize('BottomLeft');"></div>
-		<div class="resizeGrip" id="resizeGripLeft" onmousedown="dragResize('Left');"></div>
-		<div id="content" onmousedown="dragMove();">
-			<h1>Hello, world!</h1>
-			<p>You can drag from anywhere you want, and resize from the edges.</p>
-			<button id="close" onclick="closeWindow();">Close</button>
-			<button id="run-teamspeak" onclick="runTeamSpeak();">Run TeamSpeak</button>
-			<button onclick="takeScreenshot();">Take Screenshot</button>
-			<button id="open-subwindow" onclick="openSubWindow();">Open Sub-Window</button>
-			<img id="screenshot" width="300px"></img>
+		<div class="content" onmousedown="dragMove();">
+
+			<header>
+
+				<!-- additional icons -->
+				<!-- <div class="window-controls-group">
+					<button class="window-control">
+						<svg class="svg-icon-fill">
+							<use xlink:href="assets/svg/sprite.svg#window-control_settings" />
+						</svg>
+					</button>
+
+					<button class="window-control">
+						<input type="checkbox" class="min-max-selector toggle-icons" checked />
+						<svg class="svg-icon-fill svg-icon-maximize">
+							<use xlink:href="assets/svg/sprite.svg#window-control_locked" />
+						</svg>
+						<svg class="svg-icon-fill svg-icon-restore">
+							<use xlink:href="assets/svg/sprite.svg#window-control_unlocked" />
+						</svg>
+					</button>
+				</div> -->
+
+				<div class="window-controls-group">
+					<button class="window-control" onclick="showSupport()">
+						<svg class="svg-icon-fill">
+							<use xlink:href="assets/svg/sprite.svg#window-control_support" />
+						</svg>
+					</button>
+
+					<button class="window-control" onclick="minimize()">
+						<svg class="svg-icon-fill">
+							<use xlink:href="assets/svg/sprite.svg#window-control_minimize" />
+						</svg>
+					</button>
+
+					<button class="window-control" onclick="toggleMaximize()">
+						<input type="checkbox" class="maximize-restore-selector toggle-icons" checked />
+						<svg class="svg-icon-fill svg-icon-restore">
+							<use xlink:href="assets/svg/sprite.svg#window-control_restore" />
+						</svg>
+						<svg class="svg-icon-fill svg-icon-maximize">
+							<use xlink:href="assets/svg/sprite.svg#window-control_maximize" />
+						</svg>
+					</button>
+
+					<button class="window-control window-control-close" onclick="closeWindow();">
+						<svg class="svg-icon-fill">
+							<use xlink:href="assets/svg/sprite.svg#window-control_close" />
+						</svg>
+					</button>
+				</div>
+			</header>
+
+			<main>
+				<h1>Hello, world!</h1>
+				<p>You can drag from anywhere you want, and resize from the edges</p>
+
+				<div class="btn-group">
+					<button class="btn" id="close" onclick="closeWindow();">Close</button>
+					<button class="btn" id="run-teamspeak" onclick="runTeamSpeak();">Run TeamSpeak</button>
+					<button class="btn" onclick="takeScreenshot();">Take Screenshot</button>
+					<button class="btn" id="open-subwindow" onclick="openSubWindow();">Open Sub-Window</button>
+				</div>
+
+
+				<img id="screenshot" width="300px"></img>
+			</main>
 		</div>
+
+		<div class="resize horizontal top" onmousedown="dragResize('Top');"></div>
+		<div class="resize vertical left" onmousedown="dragResize('Left');"></div>
+		<div class="resize vertical right" onmousedown="dragResize('Right');"></div>
+		<div class="resize horizontal bottom" onmousedown="dragResize('Bottom');"></div>
+
+		<div class="resize corner top-left" onmousedown="dragResize('TopLeft');"></div>
+		<div class="resize corner top-right" onmousedown="dragResize('TopRight');"></div>
+		<div class="resize corner bottom-left" onmousedown="dragResize('BottomLeft');"></div>
+		<div class="resize corner bottom-right" onmousedown="dragResize('BottomRight');"></div>
 	</body>
 </html>

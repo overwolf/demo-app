@@ -15,11 +15,21 @@
 		"windows":{
 			"MainWindow":{
 					"file":"Files/index.html",
-					"transparent":true,
-					"resizable":true,
-					"size":{"width":400, "height":300},
-					"min_size":{"width":200, "height":200},
-					"max_size":{"width":600, "height":500}
+					"transparent": true,
+					"resizable": true,
+					"use_os_windowing": true,
+					"size": {
+						"width":700,
+						"height":400
+						},
+					"min_size": {
+						"width":400,
+						"height":400
+					},
+					"max_size": {
+						"width":800,
+						"height":800
+					}
 				},
 			"SubWindow":{
 					"file":"Files/subwindow.html",
