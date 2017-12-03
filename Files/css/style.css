@@ -1,4 +1,3 @@
-/* line 3, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +5,10 @@
   font-weight: normal;
 }
 
-/* line 10, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 img {
   max-width: 100%;
 }
 
-/* line 46, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 html, body {
   height: 100%;
   cursor: default;
@@ -21,38 +18,31 @@ html, body {
   background: transparent;
 }
 
-/* line 56, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
-  -webkit-user-select: none;
 }
 
-/* line 61, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 h1 {
   font-size: 22px;
 }
 
-/* line 65, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 p {
   color: #6c6c6c;
   font-size: 16px;
   line-height: 18px;
 }
 
-/* line 72, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 button {
   border: none;
   font-family: inherit;
   background-color: inherit;
 }
 
-/* line 78, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 button:focus {
   outline: none;
 }
 
-/* line 82, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 button, i {
   position: relative;
   width: var(--size, 30px);
@@ -65,7 +55,6 @@ button, i {
   transition: 0.15s;
 }
 
-/* line 93, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 button svg, i svg {
   width: 100%;
   height: 100%;
@@ -74,18 +63,15 @@ button svg, i svg {
   user-select: none;
 }
 
-/* line 102, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .svg-icon-fill {
   fill: currentcolor;
 }
 
-/* line 106, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .svg-icon-stroke {
   fill: none;
   stroke: currentcolor;
 }
 
-/* line 111, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .toggle-icons {
   position: absolute;
   width: 100%;
@@ -93,54 +79,44 @@ button svg, i svg {
   opacity: 0;
 }
 
-/* line 117, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .toggle-icons ~ svg:first-of-type {
   display: block;
 }
 
-/* line 121, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .toggle-icons ~ svg:nth-of-type(2) {
   display: none;
 }
 
-/* line 126, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .toggle-icons:checked ~ svg:first-of-type {
   display: none;
 }
 
-/* line 130, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .toggle-icons:checked ~ svg:nth-of-type(2) {
   display: block;
 }
 
-/* line 136, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .window-controls-group {
   display: flex;
 }
 
-/* line 139, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .window-controls-group button {
   --size: 30px;
 }
 
-/* line 144, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .window-control {
   color: #a8a8a8;
   background-color: transparent;
 }
 
-/* line 148, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .window-control:hover {
   color: #dedede;
   background-color: #272727;
 }
 
-/* line 154, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .window-control-close:hover {
   background-color: #c21913;
 }
 
-/* line 158, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .content {
   position: relative;
   color: #b6b6b6;
@@ -150,7 +126,6 @@ button svg, i svg {
   flex-direction: column;
 }
 
-/* line 166, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .content:before {
   content: "";
   position: absolute;
@@ -162,7 +137,6 @@ button svg, i svg {
   pointer-events: none;
 }
 
-/* line 178, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn-group {
   display: flex;
   flex-wrap: wrap;
@@ -170,18 +144,15 @@ button svg, i svg {
   margin-right: -10px;
 }
 
-/* line 184, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn-group .btn {
   flex: 1 1 140px;
   min-width: 140px;
 }
 
-/* line 189, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn-group > * {
   margin: 5px 10px;
 }
 
-/* line 194, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn {
   position: relative;
   font-size: 15px;
@@ -200,28 +171,23 @@ button svg, i svg {
   -webkit-user-select: none;
 }
 
-/* line 211, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn:hover {
   background-color: red;
 }
 
-/* line 215, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .btn:active {
   background-color: #c21913;
 }
 
-/* line 221, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 header {
   flex-shrink: 0;
   display: flex;
 }
 
-/* line 225, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 header > *:only-of-type, header * + * {
   margin-left: auto;
 }
 
-/* line 230, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 main {
   padding: 30px;
   flex: auto;
@@ -229,127 +195,106 @@ main {
   flex-direction: column;
 }
 
-/* line 236, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 main > * + * {
   margin-top: 20px;
 }
 
-/* line 240, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 main > h1 + p {
   margin-top: 3px;
 }
 
-/* line 250, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 html {
+  background: rgba(0, 0, 0, 0.01);
   padding: 10px;
 }
 
-/* line 253, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 html.maximized {
   padding: 0;
 }
 
-/* line 256, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 html.maximized body {
   box-shadow: none;
 }
 
-/* line 260, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 html.maximized .resize {
   transform: none;
 }
 
-/* line 266, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 body {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
   overflow: visible;
 }
 
-/* line 272, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   opacity: .5;
 }
 
-/* line 277, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
+html.maximized .resize {
+  display: none;
+}
+
 .resize.top {
-  top: 0;
-  transform: translateY(5px);
+  top: 5px;
   cursor: n-resize;
 }
 
-/* line 283, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.bottom {
-  bottom: 0;
-  transform: translateY(-5px);
+  bottom: 5px;
   cursor: s-resize;
 }
 
-/* line 289, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.left {
-  left: 0;
-  transform: translateX(5px);
+  left: 5px;
   cursor: e-resize;
 }
 
-/* line 295, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.right {
-  right: 0;
-  transform: translateX(-5px);
+  right: 5px;
   cursor: w-resize;
+  z-index: 1;
 }
 
-/* line 301, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.horizontal {
-  left: 10px;
-  right: 10px;
+  left: 15px;
+  right: 15px;
   height: 10px;
 }
 
-/* line 308, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.vertical {
-  top: 10px;
-  bottom: 10px;
+  top: 15px;
+  bottom: 15px;
   width: 10px;
 }
 
-/* line 315, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.corner {
   width: 10px;
   height: 10px;
 }
 
-/* line 321, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.top-left {
-  top: 0;
-  left: 0;
-  transform: translate(5px, 5px);
+  top: 5px;
+  left: 5px;
   cursor: nw-resize;
 }
 
-/* line 328, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.top-right {
-  top: 0;
-  right: 0;
-  transform: translate(-5px, 5px);
+  top: 5px;
+  right: 5px;
   cursor: ne-resize;
 }
 
-/* line 335, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.bottom-left {
-  bottom: 0;
-  left: 0;
-  transform: translate(5px, -5px);
+  bottom: 5px;
+  left: 5px;
   cursor: sw-resize;
 }
 
-/* line 342, S:/Departments/Design/ui design/appstore/demo app/demo-app-master/Files/scss/style.scss */
 .resize.bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: translate(-5px, -5px);
+  bottom: 5px;
+  right: 5px;
   cursor: se-resize;
 }
 
-/*# sourceMappingURL=../css/style.map */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,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QUNmLGNBQWE7RUFDYixZQUFXO0NBc0VYOztBQXBFQTtFQUNDLGNBQWE7Q0FDYjs7QUFQRjtFQVVFLFNBbkNnQztFQW9DaEMsaUJBQWdCO0NBQ2hCOztBQVpGO0VBZUUsWUF4Q2dDO0VBeUNoQyxpQkFBZ0I7Q0FDaEI7O0FBakJGO0VBb0JFLFVBN0NnQztFQThDaEMsaUJBQWdCO0NBQ2hCOztBQXRCRjtFQXlCRSxXQWxEZ0M7RUFtRGhDLGlCQUFnQjtFQUNoQixXQUFVO0NBQ1Y7O0FBNUJGO0VBK0JFLFdBQXFDO0VBQ3JDLFlBQXNDO0VBQ3RDLGFBM0RrQjtDQTZEbEI7O0FBbkNGO0VBc0NFLFVBQW9DO0VBQ3BDLGFBQXVDO0VBQ3ZDLFlBbEVrQjtDQW9FbEI7O0FBMUNGO0VBNkNFLFlBdkVrQjtFQXdFbEIsYUF4RWtCO0NBMEVsQjs7QUFoREY7RUFtREUsU0E1RWdDO0VBNkVoQyxVQTdFZ0M7RUE4RWhDLGtCQUFpQjtDQUNqQjs7QUF0REY7RUF5REUsU0FsRmdDO0VBbUZoQyxXQW5GZ0M7RUFvRmhDLGtCQUFpQjtDQUNqQjs7QUE1REY7RUErREUsWUF4RmdDO0VBeUZoQyxVQXpGZ0M7RUEwRmhDLGtCQUFpQjtDQUNqQjs7QUFsRUY7RUFxRUUsWUE5RmdDO0VBK0ZoQyxXQS9GZ0M7RUFnR2hDLGtCQUFpQjtDQUNqQiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZXNldCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG5cbioge1xuXHRtYXJnaW46IDA7XG5cdHBhZGRpbmc6IDA7XG5cdGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG5cdGZvbnQtd2VpZ2h0OiBub3JtYWw7XG59XG5cbmltZyB7XG5cdG1heC13aWR0aDogMTAwJTtcbn1cblxuLy8gY29sb3JzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cblxuJHJlZDAxOiByZ2IoMTk0LCAyNSwgMTkpOyAvL3JlZFxuJHJlZDAyOiByZ2IoMjU1LCAwLCAwKTsgLy9yZWRcblxuJGdyYXkwMTk6IHJnYigxOSwgMTksIDE5KTtcbiRncmF5MDM5OiByZ2IoMzksIDM5LCAzOSk7XG4kZ3JheTA1MTogcmdiKDUxLCA1MSwgNTEpO1xuJGdyYXkwNzk6IHJnYig3OSwgNzksIDc5KTtcbiRncmF5MTA4OiByZ2IoMTA4LCAxMDgsIDEwOCk7XG4kZ3JheTE2ODogcmdiKDE2OCwgMTY4LCAxNjgpO1xuJGdyYXkxODI6IHJnYigxODIsIDE4MiwgMTgyKTtcbiRncmF5MjIyOiByZ2IoMjIyLCAyMjIsIDIyMik7XG5cbi8vIGRhcmsgdGhlbWVcbiRkYXJrLWJhY2tncm91bmRfbWFpbjogJGdyYXkwMTk7XG4kZGFyay1mb3JlZ3JvdW5kX21haW4tb24tZGFyazogJGdyYXkxNjg7XG4kZGFyay1iYWNrZ3JvdW5kX3NlY29uZGFyeTogJGdyYXkwMzk7XG4kZGFyay1iYWNrZ3JvdW5kX3RoaXJkOiAkZ3JheTA1MTtcbiRkYXJrLWJhY2tncm91bmRfZm9ydGg6ICRncmF5MDc5O1xuXG4kZGFyay1mb3JlZ3JvdW5kX21haW46ICRncmF5MTgyO1xuJGRhcmstZm9yZWdyb3VuZF9zZWNvbmRhcnk6ICRncmF5MTA4O1xuJGRhcmstZm9yZWdyb3VuZF90aGlyZDogJGdyYXkwNzk7XG5cbiRkYXJrLWJhY2tncm91bmRfbWFpbi1ob3ZlcjogJGRhcmstYmFja2dyb3VuZF9zZWNvbmRhcnk7XG4kZGFyay1iYWNrZ3JvdW5kX3NlY29uZGFyeS1ob3ZlcjogJGRhcmstYmFja2dyb3VuZF90aGlyZDtcbiRkYXJrLWZvcmVncm91bmRfbWFpbi1ob3ZlcjogJGdyYXkyMjI7XG5cbi8vIHZhcnMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbiRmYXN0LWhvdmVyOiAuMTVzO1xuXG5odG1sLCBib2R5IHtcblx0aGVpZ2h0OiAxMDAlO1xuXHRjdXJzb3I6IGRlZmF1bHQ7XG5cdHBhZGRpbmc6IDA7XG5cdG1hcmdpbjogMDtcblx0b3ZlcmZsb3c6IGhpZGRlbjtcblx0YmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG59XG5cbi8vIHR5cG9ncmFwaHlcbmJvZHkge1xuXHRmb250LWZhbWlseTogJ1RpdGlsbGl1bSBXZWInLCBzYW5zLXNlcmlmO1xuXHRmb250LXNpemU6IDE2cHg7XG59XG5cbmgxIHtcblx0Zm9udC1zaXplOiAyMnB4O1xufVxuXG5wIHtcblx0Y29sb3I6ICRkYXJrLWZvcmVncm91bmRfc2Vjb25kYXJ5O1xuXHRmb250LXNpemU6IDE2cHg7XG5cdGxpbmUtaGVpZ2h0OiAxOHB4O1xufVxuXG4vLyBidXR0b25zXG5idXR0b24ge1xuXHRib3JkZXI6IG5vbmU7XG5cdGZvbnQtZmFtaWx5OiBpbmhlcml0O1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiBpbmhlcml0O1xufVxuXG5idXR0b246Zm9jdXMge1xuXHRvdXRsaW5lOiBub25lO1xufVxuXG5idXR0b24sIGkge1xuXHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdHdpZHRoOiB2YXIoLS1zaXplLCAzMHB4KTtcblx0aGVpZ2h0OiB2YXIoLS1zaXplLCAzMHB4KTtcblx0ZGlzcGxheTogZmxleDtcblx0YWxpZ24taXRlbXM6IGNlbnRlcjtcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG5cdGZsZXg6IDAgMCBhdXRvO1xuXHRjdXJzb3I6IGRlZmF1bHQ7XG5cdHRyYW5zaXRpb246ICRmYXN0LWhvdmVyO1xuXG5cdHN2ZyB7XG5cdFx0d2lkdGg6IDEwMCU7XG5cdFx0aGVpZ2h0OiAxMDAlO1xuXHRcdGZsZXg6IDAgMCBhdXRvO1xuXHRcdHBvaW50ZXItZXZlbnRzOiBub25lO1xuXHRcdHVzZXItc2VsZWN0OiBub25lO1xuXHR9XG59XG5cbi5zdmctaWNvbi1maWxsIHtcblx0ZmlsbDogY3VycmVudGNvbG9yO1xufVxuXG4uc3ZnLWljb24tc3Ryb2tlIHtcblx0ZmlsbDogbm9uZTtcblx0c3Ryb2tlOiBjdXJyZW50Y29sb3I7XG59XG5cbi50b2dnbGUtaWNvbnMge1xuXHRwb3NpdGlvbjogYWJzb2x1dGU7XG5cdHdpZHRoOiAxMDAlO1xuXHRoZWlnaHQ6IDEwMCU7XG5cdG9wYWNpdHk6IDA7XG5cblx0fiBzdmc6Zmlyc3Qtb2YtdHlwZSB7XG5cdFx0ZGlzcGxheTogYmxvY2s7XG5cdH1cblxuXHR+IHN2ZzpudGgtb2YtdHlwZSgyKSB7XG5cdFx0ZGlzcGxheTogbm9uZTtcblx0fVxuXG5cdCY6Y2hlY2tlZCB7XG5cdFx0fiBzdmc6Zmlyc3Qtb2YtdHlwZSB7XG5cdFx0XHRkaXNwbGF5OiBub25lO1xuXHRcdH1cblxuXHRcdH4gc3ZnOm50aC1vZi10eXBlKDIpIHtcblx0XHRcdGRpc3BsYXk6IGJsb2NrO1xuXHRcdH1cblx0fVxufVxuXG4ud2luZG93LWNvbnRyb2xzLWdyb3VwIHtcblx0ZGlzcGxheTogZmxleDtcblxuXHRidXR0b24ge1xuXHRcdC0tc2l6ZTogMzBweDtcblx0fVxufVxuXG4ud2luZG93LWNvbnRyb2wge1xuXHRjb2xvcjogJGRhcmstZm9yZWdyb3VuZF9tYWluLW9uLWRhcms7XG5cdGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuXG5cdCY6aG92ZXIge1xuXHRcdGNvbG9yOiAkZGFyay1mb3JlZ3JvdW5kX21haW4taG92ZXI7XG5cdFx0YmFja2dyb3VuZC1jb2xvcjogJGRhcmstYmFja2dyb3VuZF9tYWluLWhvdmVyO1xuXHR9XG59XG5cbi53aW5kb3ctY29udHJvbC1jbG9zZTpob3ZlciB7XG5cdGJhY2tncm91bmQtY29sb3I6ICRyZWQwMTtcbn1cblxuLmNvbnRlbnQge1xuXHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdGNvbG9yOiAkZGFyay1mb3JlZ3JvdW5kX21haW47XG5cdGJhY2tncm91bmQtY29sb3I6ICRkYXJrLWJhY2tncm91bmRfbWFpbjtcblx0aGVpZ2h0OiAxMDAlO1xuXHRkaXNwbGF5OiBmbGV4O1xuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuXG5cdCY6YmVmb3JlIHtcblx0XHRjb250ZW50OiBcIlwiO1xuXHRcdHBvc2l0aW9uOiBhYnNvbHV0ZTtcblx0XHRib3JkZXI6IDFweCBzb2xpZCAkZGFyay1iYWNrZ3JvdW5kX3RoaXJkO1xuXHRcdHRvcDogLTFweDtcblx0XHRsZWZ0OiAtMXB4O1xuXHRcdHJpZ2h0OiAtMXB4O1xuXHRcdGJvdHRvbTogLTFweDtcblx0XHRwb2ludGVyLWV2ZW50czogbm9uZTtcblx0fVxufVxuXG4uYnRuLWdyb3VwIHtcblx0ZGlzcGxheTogZmxleDtcblx0ZmxleC13cmFwOiB3cmFwO1xuXHRtYXJnaW4tbGVmdDogLTEwcHg7XG5cdG1hcmdpbi1yaWdodDogLTEwcHg7XG5cblx0LmJ0biB7XG5cdFx0ZmxleDogMSAxIDE0MHB4O1xuXHRcdG1pbi13aWR0aDogMTQwcHg7XG5cdH1cblxuXHQ+ICoge1xuXHRcdG1hcmdpbjogNXB4IDEwcHg7XG5cdH1cbn1cblxuLmJ0biB7XG5cdHBvc2l0aW9uOiByZWxhdGl2ZTtcblx0Zm9udC1zaXplOiAxNXB4O1xuXHR0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcblx0cGFkZGluZzogMCAxMHB4O1xuXHRtaW4td2lkdGg6IDEyMHB4O1xuXHRoZWlnaHQ6IDMwcHg7XG5cdGNvbG9yOiB3aGl0ZTtcblx0YmFja2dyb3VuZC1jb2xvcjogJHJlZDAxO1xuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdGRpc3BsYXk6IGZsZXg7XG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XG5cdGp1c3RpZnktY29udGVudDogY2VudGVyO1xuXHR0cmFuc2l0aW9uOiAkZmFzdC1ob3Zlcjtcblx0Y3Vyc29yOiBkZWZhdWx0O1xuXHQtd2Via2l0LXVzZXItc2VsZWN0OiBub25lO1xuXG5cdCY6aG92ZXIge1xuXHRcdGJhY2tncm91bmQtY29sb3I6ICRyZWQwMjtcblx0fVxuXG5cdCY6YWN0aXZlIHtcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiAkcmVkMDE7XG5cdH1cbn1cblxuLy8gY29udGVudFxuaGVhZGVyIHtcblx0ZmxleC1zaHJpbms6IDA7XG5cdGRpc3BsYXk6IGZsZXg7XG5cblx0PiAqOm9ubHktb2YtdHlwZSwgKiArICoge1xuXHRcdG1hcmdpbi1sZWZ0OiBhdXRvO1xuXHR9XG59XG5cbm1haW4ge1xuXHRwYWRkaW5nOiAzMHB4O1xuXHRmbGV4OiBhdXRvO1xuXHRkaXNwbGF5OiBmbGV4O1xuXHRmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuXG5cdD4gKiArICoge1xuXHRcdG1hcmdpbi10b3A6IDIwcHg7XG5cdH1cblxuXHQ+IGgxICsgcCB7XG5cdFx0bWFyZ2luLXRvcDogM3B4O1xuXHR9XG59XG5cbi8vIHdpbmRvd19zaGFkb3dfYW5kX3Jlc2l6aW5nXG4kd2luZG93LW1hcmdpbjogMTBweDtcbiRyZXNpemUtaW5kZW50OiAkd2luZG93LW1hcmdpbiAvIDI7XG5cbmh0bWwge1xuXHRiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMDEpO1xuXHRwYWRkaW5nOiAkd2luZG93LW1hcmdpbjtcblxuXHQmLm1heGltaXplZCB7XG5cdFx0cGFkZGluZzogMDtcblxuXHRcdGJvZHkge1xuXHRcdFx0Ym94LXNoYWRvdzogbm9uZTtcblx0XHR9XG5cblx0XHQucmVzaXplIHtcblx0XHRcdHRyYW5zZm9ybTogbm9uZTtcblx0XHR9XG5cdH1cbn1cblxuYm9keSB7XG5cdGJveC1zaGFkb3c6IDAgMCAxMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjc1KTtcblx0b3ZlcmZsb3c6IHZpc2libGU7XG59XG5cbi8vcmVzaXplXG4ucmVzaXplIHtcblx0cG9zaXRpb246IGZpeGVkO1xuXHR6LWluZGV4OiAxMDAwO1xuXHRvcGFjaXR5OiAuNTtcblxuXHRodG1sLm1heGltaXplZCAmIHtcblx0XHRkaXNwbGF5OiBub25lO1xuXHR9XG5cblx0Ji50b3Age1xuXHRcdHRvcDogJHJlc2l6ZS1pbmRlbnQ7XG5cdFx0Y3Vyc29yOiBuLXJlc2l6ZTtcblx0fVxuXG5cdCYuYm90dG9tIHtcblx0XHRib3R0b206ICRyZXNpemUtaW5kZW50O1xuXHRcdGN1cnNvcjogcy1yZXNpemU7XG5cdH1cblxuXHQmLmxlZnQge1xuXHRcdGxlZnQ6ICRyZXNpemUtaW5kZW50O1xuXHRcdGN1cnNvcjogZS1yZXNpemU7XG5cdH1cblxuXHQmLnJpZ2h0IHtcblx0XHRyaWdodDogJHJlc2l6ZS1pbmRlbnQ7XG5cdFx0Y3Vyc29yOiB3LXJlc2l6ZTtcblx0XHR6LWluZGV4OiAxO1xuXHR9XG5cblx0Ji5ob3Jpem9udGFsIHtcblx0XHRsZWZ0OiAkd2luZG93LW1hcmdpbiArICRyZXNpemUtaW5kZW50O1xuXHRcdHJpZ2h0OiAkd2luZG93LW1hcmdpbiArICRyZXNpemUtaW5kZW50O1xuXHRcdGhlaWdodDogJHdpbmRvdy1tYXJnaW47XG5cdFx0Ly8gYmFja2dyb3VuZC1jb2xvcjogeWVsbG93O1xuXHR9XG5cblx0Ji52ZXJ0aWNhbCB7XG5cdFx0dG9wOiAkd2luZG93LW1hcmdpbiArICRyZXNpemUtaW5kZW50O1xuXHRcdGJvdHRvbTogJHdpbmRvdy1tYXJnaW4gKyAkcmVzaXplLWluZGVudDtcblx0XHR3aWR0aDogJHdpbmRvdy1tYXJnaW47XG5cdFx0Ly8gYmFja2dyb3VuZC1jb2xvcjogcmVkO1xuXHR9XG5cblx0Ji5jb3JuZXIge1xuXHRcdHdpZHRoOiAkd2luZG93LW1hcmdpbjtcblx0XHRoZWlnaHQ6ICR3aW5kb3ctbWFyZ2luO1xuXHRcdC8vIGJhY2tncm91bmQtY29sb3I6IGdyZWVuO1xuXHR9XG5cblx0Ji50b3AtbGVmdCB7XG5cdFx0dG9wOiAkcmVzaXplLWluZGVudDtcblx0XHRsZWZ0OiAkcmVzaXplLWluZGVudDtcblx0XHRjdXJzb3I6IG53LXJlc2l6ZTtcblx0fVxuXG5cdCYudG9wLXJpZ2h0IHtcblx0XHR0b3A6ICRyZXNpemUtaW5kZW50O1xuXHRcdHJpZ2h0OiAkcmVzaXplLWluZGVudDtcblx0XHRjdXJzb3I6IG5lLXJlc2l6ZTtcblx0fVxuXG5cdCYuYm90dG9tLWxlZnQge1xuXHRcdGJvdHRvbTogJHJlc2l6ZS1pbmRlbnQ7XG5cdFx0bGVmdDogJHJlc2l6ZS1pbmRlbnQ7XG5cdFx0Y3Vyc29yOiBzdy1yZXNpemU7XG5cdH1cblxuXHQmLmJvdHRvbS1yaWdodCB7XG5cdFx0Ym90dG9tOiAkcmVzaXplLWluZGVudDtcblx0XHRyaWdodDogJHJlc2l6ZS1pbmRlbnQ7XG5cdFx0Y3Vyc29yOiBzZS1yZXNpemU7XG5cdH1cbn1cbiJdfQ== */

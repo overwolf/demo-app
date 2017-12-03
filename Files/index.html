@@ -1,158 +1,163 @@
 ﻿<!DOCTYPE html>
 <html>
-	<head> 
-		<link rel="stylesheet" href="css/style.css" />
-		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-		<title>Demo app</title>
-		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet"> 
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Demo app</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
 
-		<script>
-			function dragResize(edge){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.dragResize(result.window.id, edge);
-					}
-				});
-			};
-			
-			function dragMove(){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.dragMove(result.window.id);
-					}
-				});
-			};
-			
-			function closeWindow(){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.close(result.window.id);
-					}
-				});
-			};
+    <script>
+      function dragResize(edge){
+        overwolf.windows.getCurrentWindow(function(result){
+          if (result.status=="success"){
+            overwolf.windows.dragResize(result.window.id, edge);
+          }
+        });
+      };
 
-			function minimize(){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.minimize(result.window.id);
-					}
-				});
-			};
+      function dragMove(){
+        overwolf.windows.getCurrentWindow(function(result){
+          if (result.status=="success" && result.window.state !== "Maximized"){
+            overwolf.windows.dragMove(result.window.id);
+          }
+        });
+      };
 
-			function toggleMaximize(){
-				let element = document.querySelector('.maximize-restore-selector');
-				let root =  document.getElementsByTagName( 'html' )[0];
+      function closeWindow(){
+        overwolf.windows.getCurrentWindow(function(result){
+          if (result.status=="success"){
+            overwolf.windows.close(result.window.id);
+          }
+        });
+      };
 
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status !== "success") {
-						return;
-					}
-						
-					if (element.checked) {
-						overwolf.windows.restore(result.window.id);
-						root.classList.remove('maximized');
-					} else {
-						overwolf.windows.maximize(result.window.id);
-						root.classList.add('maximized');
-					}
+      function minimize(){
+        overwolf.windows.getCurrentWindow(function(result){
+          if (result.status=="success"){
+            overwolf.windows.minimize(result.window.id);
+          }
+        });
+      };
 
-				});
-			};
+      function toggleMaximize(){
+        let element = document.querySelector('.maximize-restore-selector'),
+            root = document.documentElement;
 
-			function showSupport() {
-                window.location.href = "overwolf://settings/support";
+        overwolf.windows.getCurrentWindow(function(result){
+          if (result.status !== "success") {
+            return;
+          }
+
+          if (element.checked) {
+            overwolf.windows.restore(result.window.id);
+            root.classList.remove('maximized');
+          } else {
+            overwolf.windows.maximize(result.window.id);
+            root.classList.add('maximized');
+          }
+        });
+      };
+
+      function showSupport() {
+        window.location.href = "overwolf://settings/support";
+      };
+
+      function openSubWindow(){
+        alert("the subwindow will only be visible inside a game");
+        overwolf.windows.obtainDeclaredWindow("SubWindow", function(result){
+          if (result.status == "success"){
+            overwolf.windows.restore(result.window.id, function(result){
+                console.log(result);
+            });
+          }
+        });
+      };
+
+      function takeScreenshot(){
+        overwolf.media.takeScreenshot(function(result){
+          if (result.status == "success"){
+            var img = document.getElementById("screenshot");
+            img.src = result.url;
+            img.onload = function() {
+              overwolf.media.shareImage(img, "Screen Shot");
             };
-			
-			function openSubWindow(){
-				alert("the subwindow will only be visible inside a game");
-				overwolf.windows.obtainDeclaredWindow("SubWindow", function(result){
-					if (result.status == "success"){
-						overwolf.windows.restore(result.window.id, function(result){
-								console.log(result);
-						});
-					}
-				});
-			};
-			
-			function takeScreenshot(){
-				overwolf.media.takeScreenshot(function(result){
-					if (result.status == "success"){
-						var img = document.getElementById("screenshot");
-						img.src = result.url;
-						img.onload = function() {
-							overwolf.media.shareImage(img, "Screen Shot");
-						};
-					}
-				});
-			}
-			
-			function runTeamSpeak(){
-				overwolf.extensions.launch("lmkhofgknaclgcdplfkgcahdkdmomimaoklioonf");
-			};
-		</script>
-	</head>
+          }
+        });
+      }
 
-	<body>
-		<div class="content" onmousedown="dragMove();">
+      function runTeamSpeak(){
+        overwolf.extensions.launch("lmkhofgknaclgcdplfkgcahdkdmomimaoklioonf");
+      };
+    </script>
+  </head>
 
-			<header>
+  <body>
+    <div class="content" onmousedown="dragMove();">
+
+      <header>
 
 
-				<div class="window-controls-group">
-					<button class="window-control" onclick="showSupport()">
-						<svg class="svg-icon-fill">
-							<use xlink:href="assets/svg/sprite.svg#window-control_support" />
-						</svg>
-					</button>
+        <div class="window-controls-group">
+          <button class="window-control" onclick="showSupport()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/svg/sprite.svg#window-control_support" />
+            </svg>
+          </button>
 
-					<button class="window-control" onclick="minimize()">
-						<svg class="svg-icon-fill">
-							<use xlink:href="assets/svg/sprite.svg#window-control_minimize" />
-						</svg>
-					</button>
+          <button class="window-control">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/svg/sprite.svg#window-control_settings" />
+            </svg>
+          </button>
 
-					<button class="window-control" onclick="toggleMaximize()">
-						<input type="checkbox" class="maximize-restore-selector toggle-icons" checked />
-						<svg class="svg-icon-fill svg-icon-restore">
-							<use xlink:href="assets/svg/sprite.svg#window-control_restore" />
-						</svg>
-						<svg class="svg-icon-fill svg-icon-maximize">
-							<use xlink:href="assets/svg/sprite.svg#window-control_maximize" />
-						</svg>
-					</button>
+          <button class="window-control" onclick="minimize()">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/svg/sprite.svg#window-control_minimize" />
+            </svg>
+          </button>
 
-					<button class="window-control window-control-close" onclick="closeWindow();">
-						<svg class="svg-icon-fill">
-							<use xlink:href="assets/svg/sprite.svg#window-control_close" />
-						</svg>
-					</button>
-				</div>
-			</header>
+          <button class="window-control" onclick="toggleMaximize()">
+            <input type="checkbox" class="maximize-restore-selector toggle-icons" checked />
+            <svg class="svg-icon-fill svg-icon-restore">
+              <use xlink:href="assets/svg/sprite.svg#window-control_restore" />
+            </svg>
+            <svg class="svg-icon-fill svg-icon-maximize">
+              <use xlink:href="assets/svg/sprite.svg#window-control_maximize" />
+            </svg>
+          </button>
 
-			<main>
-				<h1>Hello, world!</h1>
-				<p>You can drag from anywhere you want, and resize from the edges</p>
+          <button class="window-control window-control-close" onclick="closeWindow();">
+            <svg class="svg-icon-fill">
+              <use xlink:href="assets/svg/sprite.svg#window-control_close" />
+            </svg>
+          </button>
+        </div>
+      </header>
 
-				<div class="btn-group">
-					<button class="btn" id="close" onclick="closeWindow();">Close</button>
-					<button class="btn" id="run-teamspeak" onclick="runTeamSpeak();">Run TeamSpeak</button>
-					<button class="btn" onclick="takeScreenshot();">Take Screenshot</button>
-					<button class="btn" id="open-subwindow" onclick="openSubWindow();">Open Sub-Window</button>
-				</div>
+      <main>
+        <h1>Hello, world!</h1>
+        <p>You can drag from anywhere you want, and resize from the edges</p>
+
+        <div class="btn-group">
+          <button class="btn" id="close" onclick="closeWindow();">Close</button>
+          <button class="btn" id="run-teamspeak" onclick="runTeamSpeak();">Run TeamSpeak</button>
+          <button class="btn" onclick="takeScreenshot();">Take Screenshot</button>
+          <button class="btn" id="open-subwindow" onclick="openSubWindow();">Open Sub-Window</button>
+        </div>
 
 
-				<img id="screenshot" width="300px"></img>
-			</main>
-		</div>
+        <img id="screenshot" width="300px"></img>
+      </main>
+    </div>
 
-		<div class="resize horizontal top" onmousedown="dragResize('Top');"></div>
-		<div class="resize vertical left" onmousedown="dragResize('Left');"></div>
-		<div class="resize vertical right" onmousedown="dragResize('Right');"></div>
-		<div class="resize horizontal bottom" onmousedown="dragResize('Bottom');"></div>
+    <div class="resize horizontal top" onmousedown="dragResize('Top');"></div>
+    <div class="resize vertical left" onmousedown="dragResize('Left');"></div>
+    <div class="resize vertical right" onmousedown="dragResize('Right');"></div>
+    <div class="resize horizontal bottom" onmousedown="dragResize('Bottom');"></div>
 
-		<div class="resize corner top-left" onmousedown="dragResize('TopLeft');"></div>
-		<div class="resize corner top-right" onmousedown="dragResize('TopRight');"></div>
-		<div class="resize corner bottom-left" onmousedown="dragResize('BottomLeft');"></div>
-		<div class="resize corner bottom-right" onmousedown="dragResize('BottomRight');"></div>
-	</body>
+    <div class="resize corner top-left" onmousedown="dragResize('TopLeft');"></div>
+    <div class="resize corner top-right" onmousedown="dragResize('TopRight');"></div>
+    <div class="resize corner bottom-left" onmousedown="dragResize('BottomLeft');"></div>
+    <div class="resize corner bottom-right" onmousedown="dragResize('BottomRight');"></div>
+  </body>
 </html>

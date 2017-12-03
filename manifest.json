@@ -25,17 +25,16 @@
 					"min_size": {
 						"width":400,
 						"height":400
-					},
-					"max_size": {
-						"width":800,
-						"height":800
 					}
 				},
 			"SubWindow":{
 					"file":"Files/subwindow.html",
 					"transparent":true,
 					"resizable":false,
-					"size":{"width":400, "height":300},
+					"size":{
+						"width":400,
+						"height":300
+					},
 					"in_game_only":true
 				}
 		}
